@@ -25,6 +25,8 @@ function ProductList() {
 
   return (
     <>
+      {" "}
+      <h1>Product List :</h1>
       {products.map(function (data) {
         return (
           <div>

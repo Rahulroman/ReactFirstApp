@@ -3,31 +3,20 @@ import { ProductContextValueType } from "../config/context";
 
 export const GET_PRODUCTS_SUCCESS = "GET_PRODUCTS_SUCCESS";
 
-export const initialProducts: ProductContextValueType = {
-  addSuccess: false,
-  updateSuccess: false,
+const initialProducts: ProductContextValueType = {
   products: [],
-  // currentFormData: {
-  //   id: NaN,
-  //   title: "",
-  //   brand: "",
-  //   description: "",
-  // },
   currentProductID: NaN,
 };
 
-export default function productReducer({
-  type,
-  payload,
-}: {
-  type: string;
-  payload?: any;
-}) {
-  switch (type) {
+export default function productReducer(
+  state: ProductContextValueType = initialProducts,
+  action: { type: string; payload: any }
+) {
+  switch (action.type) {
     case GET_PRODUCTS_SUCCESS:
-      return {
-        //...state,
-        products: payload,
-      };
+      break;
+
+    default:
+      return state;
   }
 }
